@@ -8,14 +8,19 @@ php artisan key:generate
 
 1- php artisan make:model Produit -m
      * adding protected fallable
-     ** adding schema::create to up()
+     ** adding schema::create to up()  see issues section
 
 
+
+     php artisan make:migration create_product_table
+     php artisan make:migration create_category_table
 
 
    php artisan migrate
 
-2-php artisan make:controller ProduitController
+2-php artisan make:controller Category Controller
+php artisan make:controller CategoryController --resource --model=Category
+
     adding functions
     adding routes
 
@@ -27,3 +32,52 @@ php artisan key:generate
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------
+issues :
+------------------------------------------------------------------------
+problem with mysql oldes versions
+https://laravel-news.com/laravel-5-4-key-too-long-error
+AppServiceProvider.php
+use Illuminate\Support\Facades\Schema;
+
+function boot()
+{
+    Schema::defaultStringLength(191);
+}
+------------------------------------------------------------------------
+
+composer dump-autoload
+
+
+------------------------------------------------------------------------
+Error Code: 1364. Field 'id' doesn't have a default value
+
+Open database.php and find 'strict' change the value true to false and try again
+
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+------------------------------------------------------------------------
