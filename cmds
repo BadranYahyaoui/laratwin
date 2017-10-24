@@ -1,0 +1,29 @@
+0-
+sudo service mysql stop // start
+cp .env.example .env
+php artisan key:generate
+
+
+
+
+1- php artisan make:model Produit -m
+     * adding protected fallable
+     ** adding schema::create to up()
+
+
+
+
+   php artisan migrate
+
+2-php artisan make:controller ProduitController
+    adding functions
+    adding routes
+
+
+
+
+
+
+
+
+
