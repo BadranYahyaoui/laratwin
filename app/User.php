@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','age'
     ];
 
     /**
@@ -26,6 +26,17 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+
+    //ManyToMany Relationship ,User have many Product & Product could be owned by  many users
+    public function products(){
+        return $this->belongsToMany('App\Product','product_user'); // product_user is the join table
+    }
+
+
+
+    //OneToMany Relationship ,User have many Tasks & and task is assigned to One User
     public function tasks(){
         return $this->hasMany('App\Task');
     }
