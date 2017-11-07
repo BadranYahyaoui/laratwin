@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
 <div class="container">
@@ -18,7 +18,7 @@
                         @forelse($products as $product)
 
                             <div class="panel panel-primary">
-                                <div class="panel-heading"> {{$product->id}} || {{$product->nom}}</div>
+                                <div class="panel-heading"> {{$product->id}} || {{$product->nom}} </div>
                                 <div class="panel-body">
                                     <b>Product Name :</b> {{$product->nom}}  <br>
                                     <b>Product Description :</b> {{$product->description}}  <br>
@@ -33,14 +33,17 @@
                                     @else
                                         <a href="{{ route('products-user', $product->id) }}" class="btn btn-primary">add to cart</a>
                                     @endif
+                                </div>
+                            </div>
                                     @empty
                                         <p>No product available ,Our stock is empty</p>
-                                </div>
 
-                            </div>
+
+
 
 
                         @endforelse
+
                 </div>
             </div>
         </div>
