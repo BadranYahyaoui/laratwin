@@ -31,7 +31,7 @@ class User extends Authenticatable
 
     //ManyToMany Relationship ,User have many Product & Product could be owned by  many users
     public function products(){
-        return $this->belongsToMany('App\Product','product_user'); // product_user is the join table
+        return $this->belongsToMany('App\Product','product_user','product_id','user_id'); // product_user is the join table
     }
 
 

@@ -1,9 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="container">
+
 
 <div class="col-md-12">
-
+    <a href="{{route('product.create')}}">Create New Product</a>
 
     <table class="table">
         <thead>
@@ -53,5 +55,5 @@
     </table>
 
 </div>
-
+</div>
 @endsection

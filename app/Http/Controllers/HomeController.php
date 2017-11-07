@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -21,8 +23,23 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
-        return view('home');
-    }
+
+        $products=Product::all();
+
+        return view('home', ['products' => $products]);
+
+
+    } public function panier()
+{
+//            $products=Product::all()->orderBy('datesort','desc')->get();
+
+    $products=Auth::user()->products()->get();
+
+    return view('panier', ['products' => $products]);
+
+
+}
 }
