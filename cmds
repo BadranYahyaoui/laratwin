@@ -1,4 +1,4 @@
-0-
+C0-
 sudo service mysql stop // start
 cp .env.example .env
 php artisan key:generate
@@ -29,6 +29,7 @@ php artisan make:controller CategoryController --resource --model=Category
 
 
 
+php artisan make:migration create_user_film_table --table=user_film
 
 
 

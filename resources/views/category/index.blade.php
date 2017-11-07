@@ -1,6 +1,6 @@
-{{--@extends('layouts.master')--}}
+@extends('layouts.app')
 
-{{--@section('content')--}}
+@section('content')
 
     <div class="col-md-12">
 
@@ -48,4 +48,4 @@
 
     </div>
 
-{{--@endsection--}}
+@endsection
