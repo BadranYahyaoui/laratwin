@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard | Dear  {{ Auth::user()->name }} u can chek your Panier ha za7i <a
+                <div class="panel-heading">Dashboard | Dear  {{ Auth::user()->name }} u can chek your Panier <a
                             href="{{route('panier')}}">ici</a> </div>
 
                 <div class="panel-body">
@@ -18,9 +18,9 @@
                         @forelse($products as $product)
 
                             <div class="panel panel-primary">
-                                <div class="panel-heading"> {{$product->id}} || {{$product->nom}} </div>
+                                <div class="panel-heading"> {{$product->id}} || {{$product->name}}</div>
                                 <div class="panel-body">
-                                    <b>Product Name :</b> {{$product->nom}}  <br>
+                                    <b>Product Name :</b> {{$product->name}}  <br>
                                     <b>Product Description :</b> {{$product->description}}  <br>
                                     <b>Product Category :</b> {{$product->category->name}}  <br>
                                     <b>Product price :</b> {{$product->price}}  <br>
